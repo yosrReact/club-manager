@@ -1,0 +1,57 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1c2430;
+  --muted: #5b6676;
+  --border: #dde2e8;
+  --primary: #1f6f5c;
+  --primary-text: #ffffff;
+  --danger: #b42318;
+  --success-bg: #e3f4ec;
+  --success-text: #135c45;
+  --warning-bg: #fdf0e1;
+  --warning-text: #8a4b0f;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+
+.members-page { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+.members-page header { margin-bottom: 24px; }
+.members-page h1 { margin: 0 0 4px; font-size: 1.8rem; }
+.summary, .season { margin: 2px 0; color: var(--muted); }
+
+.layout { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } }
+
+.member-form, section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+h2 { margin-top: 0; font-size: 1.15rem; }
+
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+label { font-weight: 600; font-size: 0.9rem; }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+input[aria-invalid='true'] { border-color: var(--danger); }
+.field-error { margin: 0; color: var(--danger); font-size: 0.85rem; }
+
+button { font: inherit; cursor: pointer; border-radius: 8px; padding: 7px 12px; border: 1px solid var(--primary); background: var(--primary); color: var(--primary-text); }
+button.secondary { background: transparent; color: var(--text); border-color: var(--border); }
+button.danger { background: var(--danger); border-color: var(--danger); }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #8cc7b8; outline-offset: 1px; }
+
+.member-filters { display: flex; gap: 12px; flex-wrap: wrap; }
+.member-filters .field { flex: 1 1 180px; }
+
+.member-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.member-card { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; }
+.member-main { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.member-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.email { color: var(--muted); font-size: 0.9rem; width: 100%; }
+.badge { font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #e7eef6; color: #23466b; }
+.fee { font-size: 0.8rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+.fee-paid { background: var(--success-bg); color: var(--success-text); }
+.fee-unpaid { background: var(--warning-bg); color: var(--warning-text); }
+.confirm { display: inline-flex; gap: 6px; }
+.empty { color: var(--muted); }
